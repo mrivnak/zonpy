@@ -1,6 +1,9 @@
 # zonpy
 
-A python library for reading and writing ZON (Zig Object Notation) files.
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/zonpy)
+![GitHub Release](https://img.shields.io/github/v/release/mrivnak/zonpy)
+
+A Python library for reading and writing ZON (Zig Object Notation) files.
 
 ## Usage
 

@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "zonpy"
-version = "0.1.0"
-description = "Library for parsinge and writing ZON (Zig Object Notation) files"
+version = "0.1.1"
+description = "Library for parsing and writing ZON (Zig Object Notation) files"
 authors = ["Mike Rivnak <rivnakm1@gmail.com>"]
 readme = "README.md"
 license = "MIT"
