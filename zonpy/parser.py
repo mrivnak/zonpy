@@ -14,8 +14,9 @@ class Parser:
         except StopIteration:
             self.current = None
 
-    def parse(self) -> dict:
-        result = {}
+    def parse(self) -> dict | list:
+        dict_result = {}
+        list_result = []
 
         while self.current:
             if self.current.type == TokenType.LBRACE:
@@ -28,13 +29,16 @@ class Parser:
                 self.next()
                 break
 
-            key = self.key()
-            self.equals()
-            value = self.value()
+            if self.current.type == TokenType.IDENTIFIER:
+                key = self.key()
+                self.equals()
+                value = self.value()
 
-            result[key] = value
+                dict_result[key] = value
+            else:
+                list_result.append(self.value())
 
-        return result
+        return list_result if list_result else dict_result
 
     def key(self):
         if self.current is not None and self.current.type == TokenType.IDENTIFIER:
@@ -44,7 +48,7 @@ class Parser:
         else:
             raise Exception(f"Expected KEY but got {self.current}")
 
-    def value(self) -> str | int | float | bool | dict:
+    def value(self) -> str | int | float | bool | dict | list:
         if self.current is not None and (
             self.current.type == TokenType.STRING
             or self.current.type == TokenType.NUMBER

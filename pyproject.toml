@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "zonpy"
-version = "0.1.1"
+version = "0.2.0"
 description = "Library for parsing and writing ZON (Zig Object Notation) files"
 authors = ["Mike Rivnak <rivnakm1@gmail.com>"]
 readme = "README.md"

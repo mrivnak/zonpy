@@ -27,3 +27,9 @@ def test_loads_nested_keys():
     output = loads(input)
 
     assert output == {"key1": "value1", "key2": {"key3": "value3"}}
+
+def test_loads_list():
+    input = """.{.key = .{ "one", "two", "three" }}"""
+    output = loads(input)
+
+    assert output == {"key": ["one", "two", "three"]}

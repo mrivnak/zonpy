@@ -43,6 +43,11 @@ def test_raw_keys():
     expected = [".{", '.@"raw-key"', "=", '"value"', "}"]
     assert list(lexer.read(input)) == expected
 
+def test_list():
+    input = '.{.key = .{ "one", "two", "three" }}'
+    expected = [".{", ".key", "=", ".{", '"one"', ",", '"two"', ",", '"three"', "}", "}"]
+    assert list(lexer.read(input)) == expected
+
 
 def test_parse_tokens():
     input = '.{.key = "value",.@"raw-key" = 3.14}'
