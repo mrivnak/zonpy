@@ -48,7 +48,6 @@ def read(input: str) -> Iterator[str]:
     for c in input:
         if c.isspace():
             if current:
-                print("current", current)
                 yield current
                 current = ""
             continue
